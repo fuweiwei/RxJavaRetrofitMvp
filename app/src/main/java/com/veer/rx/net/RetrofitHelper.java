@@ -85,10 +85,6 @@ public class RetrofitHelper {
             Request request  =  chain.request()
                     .newBuilder()
                     .addHeader("X-APP-TYPE","android")
-                    .addHeader("X-LZ-XJD","2")
-                    .addHeader("X-APP-VER","27")
-                    .addHeader("X-APP-NAME","2.0.7")
-                    .addHeader("X-APP-VER_NAME","B")
                     .build();
             Response response = chain.proceed(request);
             return response;

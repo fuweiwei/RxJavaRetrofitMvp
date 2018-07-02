@@ -8,5 +8,5 @@ package com.veer.rx.common;
  */
 
 public class Contacts {
-    public static String DEV_BASE_URL = "http://192.168.180.225:10010/";
+    public static String DEV_BASE_URL = "https://api.douban.com/v2/";
 }

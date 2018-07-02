@@ -34,7 +34,7 @@ public class MainActivity extends BaseActivity {
     @OnClick(R.id.btn)
     public void onToBanner(View view){
         ARouter.getInstance()
-                .build(ActivityContracts.ACTIVITY_BANNER)
+                .build(ActivityContracts.ACTIVITY_BOOK)
                 .navigation();
     }
 }

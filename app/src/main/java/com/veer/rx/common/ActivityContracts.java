@@ -9,4 +9,5 @@ package com.veer.rx.common;
 
 public class ActivityContracts {
     public static final String ACTIVITY_BANNER = "/banner/BannerActivity";
+    public static final String ACTIVITY_BOOK = "/book/BookActivity";
 }
