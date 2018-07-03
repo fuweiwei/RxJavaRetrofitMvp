@@ -3,6 +3,7 @@ package com.veer.rx.base;
 import android.app.Application;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.blankj.utilcode.util.Utils;
 import com.veer.rx.BuildConfig;
 
 /**
@@ -17,6 +18,8 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        //初始化工具包
+        Utils.init(this);
         intARouter();
     }
     /**

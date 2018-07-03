@@ -32,7 +32,7 @@ public class BookPresenter extends BasePresenter<BookContract.View> implements B
                 }, new Consumer<Throwable>() {
                     @Override
                     public void accept(Throwable throwable) throws Exception {
-                        mView.showFailed("error");
+                        mView.showFailed(throwable.getMessage());
                     }
                 });
     }

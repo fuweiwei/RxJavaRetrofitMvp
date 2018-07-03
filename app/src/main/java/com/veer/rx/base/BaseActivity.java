@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.Window;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.trello.rxlifecycle2.LifecycleTransformer;
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 
@@ -103,17 +104,17 @@ public abstract class BaseActivity<P extends BaseContract.BasePresenter> extends
 
     @Override
     public void showSuccess(String message) {
-
+        ToastUtils.showShort(message);
     }
 
     @Override
     public void showFailed(String message) {
-
+        ToastUtils.showShort(message);
     }
 
     @Override
     public void showNoNet() {
-
+        ToastUtils.showShort("无网络");
     }
 
     @Override

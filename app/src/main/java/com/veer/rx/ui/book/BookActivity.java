@@ -34,7 +34,7 @@ public class BookActivity extends BaseActivity<BookPresenter> implements BookCon
     }
 
     @Override
-    protected BookPresenter initPresenter() {
+    protected  BookPresenter initPresenter() {
         return new BookPresenter();
     }
 
