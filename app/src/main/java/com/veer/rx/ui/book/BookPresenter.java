@@ -5,6 +5,7 @@ import com.veer.rx.base.BasePresenter;
 import com.veer.rx.model.BookModel;
 import com.veer.rx.net.RetrofitHelper;
 import com.veer.rx.net.RxSchedulers;
+import com.veer.rx.widget.FrameLayout4Loading;
 
 import io.reactivex.functions.Consumer;
 
@@ -19,7 +20,8 @@ import io.reactivex.functions.Consumer;
 public class BookPresenter extends BasePresenter<BookContract.View> implements BookContract.Presenter{
 
     @Override
-    public void getBook(String p, String tag, String start, String end) {
+    public void getBook(final FrameLayout4Loading frameLayout4Loading, String p, String tag, String start, String end) {
+       mView.showLoading();
         RetrofitHelper.getInstance().getServer()
                 .getBooks(p,tag,start,end)
                 .compose(RxSchedulers.<BookModel>applySchedulers())
@@ -27,12 +29,13 @@ public class BookPresenter extends BasePresenter<BookContract.View> implements B
                 .subscribe(new Consumer<BookModel>() {
                     @Override
                     public void accept(BookModel bookModel) throws Exception {
-                     mView.setBook(bookModel);
+                        mView.hideLoading();
+                        mView.setBook(bookModel);
                     }
                 }, new Consumer<Throwable>() {
                     @Override
                     public void accept(Throwable throwable) throws Exception {
-                        mView.showFailed(throwable.getMessage());
+                       mView.hideLoading();
                     }
                 });
     }

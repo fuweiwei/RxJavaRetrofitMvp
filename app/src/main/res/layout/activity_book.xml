@@ -4,9 +4,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" tools:context="com.veer.rx.MainActivity">
+    <com.veer.rx.widget.FrameLayout4Loading
+        android:id="@+id/loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <TextView
         android:layout_width="wrap_content"
         android:id="@+id/tv_book"
         android:text="GO"
         android:layout_height="wrap_content" />
+    </com.veer.rx.widget.FrameLayout4Loading>
 </RelativeLayout>

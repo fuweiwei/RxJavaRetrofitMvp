@@ -2,6 +2,7 @@ package com.veer.rx.ui.book;
 
 import com.veer.rx.base.BaseContract;
 import com.veer.rx.model.BookModel;
+import com.veer.rx.widget.FrameLayout4Loading;
 
 /**
  * 描述
@@ -17,6 +18,6 @@ public interface BookContract {
 
     }
     interface Presenter extends BaseContract.BasePresenter<View>{
-        void getBook(String p,String tag,String start,String end);
+        void getBook(FrameLayout4Loading frameLayout4Loading,String p, String tag, String start, String end);
     }
 }

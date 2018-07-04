@@ -3,4 +3,95 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="background_color_gray">#F5F5F5</color>
+
+    <color name="white">#ffffffff</color>
+    <color name="black">#333333</color>
+    <color name="red">#f76a53</color>
+    <color name="red_home">#F45A5A</color>
+    <color name="pink">#E31B1A</color>
+    <color name="pink1">#D33D3C</color>
+    <!-- <color name="background_color_gray">#e6e6e6</color> -->
+    <color name="background_color_bright_white">#f8f8f8</color>
+    <color name="dark_blue">#014da1</color>
+    <color name="circle_blue">#27A5F4</color>
+    <color name="normal_blue">#3fa9f5</color>
+    <color name="pressed_blue">#3798ed</color>
+    <color name="disable_gray">#cccccc</color>
+    <color name="share_color_orange">#ffb600</color>
+
+    <color name="text_color_green">#459606</color>
+    <color name="text_color_gary">#696969</color>
+    <color name="text_color_light_gary">#696969</color>
+    <color name="text_color_orange">#e76011</color>
+    <color name="text_color_bebebe">#bebebe</color>
+    <color name="text_color_666666">#666666</color>
+    <color name="text_color_red">#e31e1e</color>
+
+    <color name="light_gary">#bebebe</color>
+
+    <color name="divider_color">#cccccc</color>
+
+    <!-- 背景条按钮效果颜色 -->
+    <color name="press_bar_color">#d8d8d8</color>
+
+    <!-- 取景器颜色值 -->
+    <color name="viewfinder_mask">#60000000</color>
+    <!-- 导航栏背景色 -->
+    <color name="title_bg">#1482de</color>
+
+    <!-- 我的总资产文字颜色 -->
+    <color name="my_allmoney">#abacaf</color>
+    <!--帮助描述-->
+    <color name="help_describe">#808080</color>
+
+    <color name="hr_green_light">#b0d935</color>
+    <color name="hr_grenn_middle">#82c61f</color>
+
+    <color name="link_color">#4F9DE9</color>
+
+
+    <!--浅灰颜色  时间数字，金额文字-->
+    <color name="hr_gray_light">#A8ACAF</color>
+    <!--中灰颜色    副标题，账单时间-->
+    <color name="hr_gray_middle">#999999</color>
+    <!--深灰颜色    产品期限，金额，文字标题-->
+    <color name="hr_gray_Heavy">#333333</color>
+    <!--用于提示-->
+    <color name="hr_gray">#ABACAF</color>
+
+    <!--用于分割xian-->
+    <color name="hr_gray_divi">#dddddd</color>
+    <!--用于背景-->
+    <color name="hr_gray_bg">#efeff4</color>
+    <!--橘色文字或者其他-->
+    <color name="hr_orange_nomal">#FF6633</color>
+    <color name="hr_orange_press">#ED5B10</color>
+    <color name="hr_orange_light">#fdd3b4</color>
+    <color name="hr_orange_investdetail_accbenefit">#ffb299</color>
+
+    <!--黄色文字-->
+    <color name="hr_yellow">#ffca08</color>
+    <color name="hr_yellow_light">#ffca22</color>
+    <color name="hr_yellow_safe_inspect">#ffea24</color>
+
+    <!-- 首页为您推荐字体颜色 -->
+    <color name="index_text_recommend">#868b90</color>
+    <!-- 首页list右上角文字颜色 -->
+    <color name="index_text_item_right_top">#f7a943</color>
+    <!-- 首页预期年化文字颜色 -->
+    <color name="index_text_item_left">#ff6633</color>
+
+    <color name="recommend_text">#480202</color>
+
+    <color name="transparent">#0000</color>
+    <color name="province_line_border">#C7C7C7</color>
+    <color name="green">#7ED321</color>
+    <color name="bg_notice">#14F2B44E</color>
+    <color name="coupon_red">#C03107</color>
+    <color name="coupon_gray">#9B9B9B</color>
+    <color name="coupon_black">#000000</color>
+    <color name="coupon_orange">#FC4F08</color>
+    <color name="btn_gray">#DFDFDF</color>
 </resources>

@@ -9,6 +9,7 @@ import android.view.Window;
 import com.blankj.utilcode.util.ToastUtils;
 import com.trello.rxlifecycle2.LifecycleTransformer;
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
+import com.veer.rx.widget.ProgressDialog;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -25,6 +26,7 @@ public abstract class BaseActivity<P extends BaseContract.BasePresenter> extends
     protected Activity mContext;
     protected P mPresenter;
     private Unbinder mUnBinder;
+    private ProgressDialog mDialog;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -94,12 +96,17 @@ public abstract class BaseActivity<P extends BaseContract.BasePresenter> extends
 
     @Override
     public void showLoading() {
-
+        if (mDialog == null) {
+            mDialog = new ProgressDialog(this);
+        }
+        mDialog.show();
     }
 
     @Override
     public void hideLoading() {
-
+        if (mDialog != null && mDialog.isShowing()) {
+            mDialog.dismiss();
+        }
     }
 
     @Override

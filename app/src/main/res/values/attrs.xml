@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="FrameLayout4Loading">
+        <attr name="filterable" format="boolean" />
+        <attr name="loadingView" format="reference" />
+        <attr name="defaultExceptionView" format="reference" />
+        <attr name="defaultNetworkExceptionView" format="reference" />
+        <attr name="defaultDataExceptionnView" format="reference" />
+        <attr name="noNetworkView" format="reference" />
+        <attr name="timeoutView" format="reference" />
+        <attr name="noDataView" format="reference" />
+    </declare-styleable>
+    <style name="Theme_dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowSoftInputMode">stateHidden|adjustPan</item>
+    </style>
+</resources>
