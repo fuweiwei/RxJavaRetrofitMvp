@@ -19,6 +19,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.veer.rx.R;
 
 /***
@@ -69,7 +70,9 @@ public class FrameLayout4Loading extends FrameLayout {
 	private TextView subTip;
 	private boolean viewUp = false;
 
-	private Context context;
+	private LottieAnimationView mLottieAnimationView;
+
+	private Context mContext;
 
 	public boolean isViewUp() {
 		return viewUp;
@@ -79,8 +82,6 @@ public class FrameLayout4Loading extends FrameLayout {
 		this.viewUp = viewUp;
 	}
 
-	// loading animation
-	private ImageView loadingIv;
 
 	public FrameLayout4Loading(Context context) {
 		super(context);
@@ -101,11 +102,10 @@ public class FrameLayout4Loading extends FrameLayout {
 
 	private void init(Context context, AttributeSet attrs) {
 
-		this.context = context;
+		this.mContext = context;
 
 		if (isInEditMode())
 			return;
-
 
 		if (loadingAnim==null){
 			loadingAnim = AnimationUtils.loadAnimation(context, R.anim.round_loading);
@@ -285,11 +285,9 @@ public class FrameLayout4Loading extends FrameLayout {
 			tip = (TextView) v.findViewById(R.id.empty_tip_tv);
 			subTip = (TextView) v.findViewById(R.id.empty_sub_tip_tv);
 		} else if (ViewType_Loading == viewType) {
-			loadingIv = (ImageView) v.findViewById(R.id.loading_iv);
-//			AnimationDrawable animationDrawable = (AnimationDrawable) loadingIv
-//					.getDrawable();
-//			animationDrawable.start();
-			loadingIv.startAnimation(loadingAnim);
+			mLottieAnimationView = v.findViewById(R.id.loading_iv);
+			//设置加载速度
+			mLottieAnimationView.setSpeed(10);
 		}
 	}
 

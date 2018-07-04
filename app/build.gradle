@@ -54,4 +54,6 @@ dependencies {
     annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
     //图片glide
     compile 'com.github.bumptech.glide:glide:3.7.0'
+    //动画lottie
+    compile 'com.airbnb.android:lottie:2.1.0'
 }

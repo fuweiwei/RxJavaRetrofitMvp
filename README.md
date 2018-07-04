@@ -7,4 +7,5 @@ Mvp  （https://www.jianshu.com/p/7b839b7c5884）
 ButterKnife
 Arouter（https://www.jianshu.com/p/6808d4e54d4a）
 glide 图片框架
+Lottie android动画框架 （https://www.lottiefiles.com）
 
