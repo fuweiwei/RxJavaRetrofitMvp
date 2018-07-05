@@ -8,4 +8,4 @@ ButterKnife
 Arouter（https://www.jianshu.com/p/6808d4e54d4a）
 glide 图片框架
 Lottie android动画框架 （https://www.lottiefiles.com）
-
+Utilcode  一个Android工具类集合包（com.blankj:utilcode:1.13.4）

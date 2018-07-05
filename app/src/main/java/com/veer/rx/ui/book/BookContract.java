@@ -5,8 +5,7 @@ import com.veer.rx.model.BookModel;
 import com.veer.rx.widget.FrameLayout4Loading;
 
 /**
- * 描述
- *
+ * 书本配置约定
  * @author Veer
  * @email 276412667@qq.com
  * @date 18/7/2
