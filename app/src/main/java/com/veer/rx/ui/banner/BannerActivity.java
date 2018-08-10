@@ -9,11 +9,11 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.bumptech.glide.Glide;
 import com.veer.rx.R;
 import com.veer.rx.base.BaseActivity;
 import com.veer.rx.common.ActivityContracts;
 import com.veer.rx.model.OtherProductModel;
+import com.veer.rx.util.ImageLoader;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -74,7 +74,7 @@ public class BannerActivity extends BaseActivity<BannerPresenter> implements Ban
                 final OtherProductModel model = mList.get(position);
                 if(model!=null){
                     String url = model.imageUrl;
-                    Glide.with(mContext).load(url).into(holder.imageView);
+                    ImageLoader.load(mContext,url,holder.imageView);
                     holder.imageView.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {

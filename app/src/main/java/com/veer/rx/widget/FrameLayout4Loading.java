@@ -287,7 +287,7 @@ public class FrameLayout4Loading extends FrameLayout {
 		} else if (ViewType_Loading == viewType) {
 			mLottieAnimationView = v.findViewById(R.id.loading_iv);
 			//设置加载速度
-			mLottieAnimationView.setSpeed(10);
+			mLottieAnimationView.setSpeed(100);
 		}
 	}
 
