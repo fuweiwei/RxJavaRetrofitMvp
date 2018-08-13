@@ -10,6 +10,7 @@ import com.trello.rxlifecycle2.LifecycleTransformer;
  */
 
 public interface BaseContract {
+
     interface BasePresenter<T extends BaseView>{
         /**
          * view挂载
@@ -17,12 +18,12 @@ public interface BaseContract {
          * @param view
          */
         void attachView(T view);
-
         /**
          * View卸载
          */
         void detachView();
     }
+
     interface BaseView{
 
         /**
