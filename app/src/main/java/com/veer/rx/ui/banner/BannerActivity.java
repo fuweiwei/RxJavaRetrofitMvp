@@ -74,7 +74,7 @@ public class BannerActivity extends BaseActivity<BannerPresenter> implements Ban
                 final OtherProductModel model = mList.get(position);
                 if(model!=null){
                     String url = model.imageUrl;
-                    ImageLoader.load(mContext,url,holder.imageView);
+                    ImageLoader.getInstance().displayImage(mContext,url,holder.imageView);
                     holder.imageView.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {

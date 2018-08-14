@@ -14,10 +14,26 @@ import com.bumptech.glide.Glide;
  */
 
 public class ImageLoader {
+    private static ImageLoader mInstance;
 
-    public static void load(Context context, String url, ImageView view) {
+    public static ImageLoader getInstance(){
+        if(mInstance == null){
+            mInstance = new ImageLoader();
+        }
+        return mInstance;
+    }
+
+    public void displayImage(Context context, String url, ImageView view) {
         Glide.with(context)
                 .load(url)
+                .centerCrop()
+                .into(view);
+    }
+    public void displayImage(Context context, String url, ImageView view,int defaultViewId,int errorViewId) {
+        Glide.with(context)
+                .load(url)
+                .placeholder(defaultViewId)
+                .error(errorViewId)
                 .centerCrop()
                 .into(view);
     }
