@@ -23,6 +23,12 @@ public class ImageLoader {
         return mInstance;
     }
 
+    /**
+     * 显示图片
+     * @param context
+     * @param url
+     * @param view
+     */
     public void displayImage(Context context, String url, ImageView view) {
         Glide.with(context)
                 .load(url)
