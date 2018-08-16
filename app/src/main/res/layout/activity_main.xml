@@ -1,14 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" tools:context="com.veer.rx.MainActivity">
-    <Button
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.veer.rx.MainActivity">
+
+    <TextView
+        android:id="@+id/tv_title"
         android:layout_width="wrap_content"
-        android:id="@+id/btn"
-        android:gravity="center"
-        android:text="GO"
-        android:layout_centerInParent="true"
+        android:text="欢迎登录系统"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingTop="100dp"
         android:layout_height="wrap_content" />
-</RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/tv_name"
+        android:gravity="center"
+        android:text="用户："
+        android:textSize="20sp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        />
+    <EditText
+        android:id="@+id/et_name"
+        android:layout_width="0dp"
+        android:layout_marginTop="30dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/tv_name"
+        android:layout_marginRight="20dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/tv_password"
+        android:gravity="center"
+        android:text="密码："
+        android:textSize="20sp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/et_name"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        />
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/tv_password"
+        android:layout_marginRight="20dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_name"
+
+        />
+    <Button
+        android:id="@+id/btn"
+        android:text="登录"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_password"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_margin="20dp"
+        android:layout_height="wrap_content" />
+</android.support.constraint.ConstraintLayout>
