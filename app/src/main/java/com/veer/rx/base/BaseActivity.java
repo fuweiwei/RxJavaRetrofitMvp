@@ -96,9 +96,7 @@ public abstract class BaseActivity<P extends BaseContract.BasePresenter> extends
 
     @Override
     public void showLoading() {
-        if (mDialog == null) {
-            mDialog = new ProgressDialog(this);
-        }
+        mDialog = new ProgressDialog(this);
         mDialog.show();
     }
 
