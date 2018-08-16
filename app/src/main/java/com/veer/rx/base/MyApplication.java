@@ -15,9 +15,11 @@ import com.veer.rx.BuildConfig;
  */
 
 public class MyApplication extends Application {
+    private static MyApplication mMyApplication;
     @Override
     public void onCreate() {
         super.onCreate();
+        mMyApplication = this;
         //初始化工具包
         Utils.init(this);
         intARouter();
@@ -35,5 +37,8 @@ public class MyApplication extends Application {
         }
         // 尽可能早，推荐在Application中初始化
         ARouter.init(this);
+    }
+    public static MyApplication getApplication() {
+        return mMyApplication;
     }
 }

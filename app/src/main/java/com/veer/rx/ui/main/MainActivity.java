@@ -10,6 +10,8 @@ import com.blankj.utilcode.util.ToastUtils;
 import com.veer.rx.R;
 import com.veer.rx.base.BaseActivity;
 import com.veer.rx.common.ActivityContracts;
+import com.veer.rx.db.dao.DbUserDao;
+import com.veer.rx.db.entity.User;
 import com.veer.rx.widget.FrameLayout4Loading;
 
 import butterknife.BindView;
@@ -27,7 +29,11 @@ public class MainActivity extends BaseActivity<MainContract.Presenter> implement
 
     @Override
     protected void initView() {
-
+        User user = DbUserDao.getInstance().getUser();
+        if(!TextUtils.isEmpty(user.getName())){
+            mEtName.setText(user.getName());
+            mEtPassWord.setText(user.getPassword());
+        }
     }
 
     @Override

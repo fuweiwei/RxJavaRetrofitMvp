@@ -5,6 +5,8 @@ import android.os.Handler;
 import android.text.TextUtils;
 
 import com.veer.rx.base.BasePresenter;
+import com.veer.rx.db.dao.DbUserDao;
+import com.veer.rx.db.entity.User;
 import com.veer.rx.widget.FrameLayout4Loading;
 
 /**
@@ -23,6 +25,10 @@ public class MainPresenter extends BasePresenter<MainContract.View> implements M
         new Handler().postDelayed(new Runnable(){
             public void run() {
                 if(TextUtils.equals(name,"veer")&&TextUtils.equals(password,"v123456")){
+                    User user = new User();
+                    user.setName("veer");
+                    user.setPassword("v123456");
+                    DbUserDao.getInstance().addUser(user);
                     mView.loginSuccess("登录成功");
                 }else{
                     mView.loginError("密码错误！");
