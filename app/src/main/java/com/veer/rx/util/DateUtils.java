@@ -14,9 +14,8 @@ import java.util.Comparator;
 import java.util.Date;
 
 /**
- * 作者：wangdakuan
+ * 作者：veer
  * 日期：2017/8/17 13:49
- * 邮箱：wangdakuan@kjtpay.com.cn
  * 功能：日期、时间工具类
  */
 public class DateUtils {
