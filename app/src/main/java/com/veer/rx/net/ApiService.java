@@ -28,7 +28,7 @@ public interface ApiService {
     @GET("/ace-app/bannerInfo/{id}")
     Observable<BaseResult<List<OtherProductModel>>> getBannerInfo(@Path("id") String id);
     /**
-     * 测试数据接口
+     * 搜索图书
      * @param q
      * @param tag
      * @param start

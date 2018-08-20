@@ -29,7 +29,7 @@ public class BookActivity extends BaseActivity<BookPresenter> implements BookCon
 
     @Override
     public void setBook(BookModel model) {
-        mTvBook.setText(model.getBooks().toString());
+        mTvBook.setText(model.getBooks().get(0).getCatalog());
     }
 
     @Override

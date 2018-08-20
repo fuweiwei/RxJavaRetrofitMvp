@@ -8,10 +8,15 @@
         android:id="@+id/loading"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    <TextView
-        android:layout_width="wrap_content"
-        android:id="@+id/tv_book"
-        android:text="GO"
-        android:layout_height="wrap_content" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/tv_book"
+                android:text="GO"
+                android:layout_height="wrap_content" />
+        </ScrollView>
+
     </com.veer.rx.widget.FrameLayout4Loading>
 </RelativeLayout>
