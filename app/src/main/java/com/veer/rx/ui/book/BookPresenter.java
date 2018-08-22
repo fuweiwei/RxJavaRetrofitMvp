@@ -10,8 +10,7 @@ import com.veer.rx.widget.FrameLayout4Loading;
 import io.reactivex.functions.Consumer;
 
 /**
- * 描述
- *
+ * 书本类P
  * @author Veer
  * @email 276412667@qq.com
  * @date 18/7/2
