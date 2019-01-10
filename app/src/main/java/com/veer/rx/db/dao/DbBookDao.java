@@ -11,7 +11,7 @@ import com.veer.rx.db.greendao.BookDao;
  */
 
 public class DbBookDao extends DbDao {
-    private static DbBookDao mDbBookDao;
+    private volatile static DbBookDao mDbBookDao;
     private BookDao mBookDao;
 
     private DbBookDao(){
@@ -22,7 +22,9 @@ public class DbBookDao extends DbDao {
     public static DbBookDao getInstance(){
         if(mDbBookDao == null){
             synchronized (DbBookDao.class){
-                mDbBookDao = new DbBookDao();
+                if(mDbBookDao == null){
+                    mDbBookDao = new DbBookDao();
+                }
             }
 
         }

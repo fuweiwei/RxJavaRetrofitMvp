@@ -13,7 +13,7 @@ import java.util.List;
  */
 
 public class DbUserDao extends DbDao {
-    private static DbUserDao mDbUserDao;
+    private volatile static DbUserDao mDbUserDao;
     private  UserDao mUserDao;
 
     private DbUserDao() {
@@ -23,8 +23,10 @@ public class DbUserDao extends DbDao {
 
     public static DbUserDao getInstance(){
         if(mDbUserDao == null){
-            synchronized (DbUserDao.class){
-                mDbUserDao = new DbUserDao();
+            synchronized (DbUserDao.class) {
+                if (mDbUserDao == null) {
+                    mDbUserDao = new DbUserDao();
+                }
             }
         }
         return mDbUserDao;

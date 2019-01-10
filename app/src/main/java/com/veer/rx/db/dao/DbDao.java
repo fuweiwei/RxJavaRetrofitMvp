@@ -12,12 +12,15 @@ import com.veer.rx.db.greendao.DaoSession;
  */
 
 public class DbDao {
-    private DbHelper mDbHelper;
+    private volatile DbHelper mDbHelper;
 
     public DbDao(){
         if(mDbHelper == null){
             synchronized (DbDao.class){
-                mDbHelper = new DbHelper();
+                //双重效验
+                if(mDbHelper == null){
+                    mDbHelper = new DbHelper();
+                }
             }
         }
     }
