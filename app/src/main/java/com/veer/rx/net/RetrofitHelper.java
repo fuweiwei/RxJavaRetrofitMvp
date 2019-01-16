@@ -32,13 +32,15 @@ public class RetrofitHelper {
     private  long CONNECT_TIMEOUT = 60L;
     private  long READ_TIMEOUT = 30L;
     private  long WRITE_TIMEOUT = 30L;
-    private static RetrofitHelper mInstance = null;
+    private volatile static RetrofitHelper mInstance = null;
     private Retrofit mRetrofit = null;
 
     public static RetrofitHelper getInstance(){
-        synchronized (RetrofitHelper.class){
-            if (mInstance == null){
-                mInstance = new RetrofitHelper();
+        if(mInstance==null){
+            synchronized (RetrofitHelper.class){
+                if (mInstance == null){
+                    mInstance = new RetrofitHelper();
+                }
             }
         }
         return mInstance;
