@@ -14,10 +14,11 @@ import okhttp3.Response;
 import okio.Buffer;
 
 /**
- * Desc:
+ * Desc: 日志拦截器
  * Created by fww on 2019/3/29
  */
 public class VLogInterceptor implements Interceptor {
+
     public static String TGA = "VLogInterceptor";
 
     @Override

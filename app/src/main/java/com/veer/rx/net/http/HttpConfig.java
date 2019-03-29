@@ -20,7 +20,7 @@ import okhttp3.Response;
 import okio.Buffer;
 
 /**
- * Desc:
+ * Desc:http配置
  * Created by fww on 2019/3/29
  */
 public class HttpConfig {
