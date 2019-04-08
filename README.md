@@ -11,4 +11,5 @@
 * Lottie android动画框架 （https://www.lottiefiles.com）<br> 
 * Utilcode  一个Android工具类集合包（com.blankj:utilcode:1.13.4）<br> 
 * ConstraintLayout 约束布局 防止页面过度绘制 (https://blog.csdn.net/lmj623565791/article/details/78011599)<br>
-* GreenGao数据库框架  特点：存取速度快 轻量级  支持加密  代码自动生成<br> 
+* GreenGao数据库框架  特点：存取速度快 轻量级  支持加密  代码自动生成<br>
+* AndroidAutoSize  今日头条屏幕适配方案  https://github.com/JessYanCoding/AndroidAutoSize
