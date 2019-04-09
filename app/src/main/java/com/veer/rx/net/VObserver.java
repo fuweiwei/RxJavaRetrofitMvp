@@ -2,10 +2,9 @@ package com.veer.rx.net;
 
 import android.accounts.NetworkErrorException;
 import android.content.Context;
-import android.support.annotation.CallSuper;
+import androidx.annotation.CallSuper;
 import android.text.TextUtils;
 
-import com.veer.rx.R;
 import com.veer.rx.model.base.BaseResponse;
 
 import java.lang.ref.WeakReference;

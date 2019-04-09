@@ -3,7 +3,7 @@ package com.veer.rx.base;
 import android.app.Activity;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.view.Window;
 
 import com.blankj.utilcode.util.ToastUtils;
