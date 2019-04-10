@@ -14,3 +14,4 @@
 * GreenGao数据库框架  特点：存取速度快 轻量级  支持加密  代码自动生成<br>
 * AndroidAutoSize  今日头条屏幕适配方案  https://github.com/JessYanCoding/AndroidAutoSize
 * autodispose autodispose代替Rxlife 用于RxJava的订阅和解除（Rxlife侵入式太强）https://github.com/uber/AutoDispose
+* leakcanary  内存分析工具  https://github.com/square/leakcanary

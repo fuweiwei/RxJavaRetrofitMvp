@@ -4,6 +4,8 @@ import android.app.Application;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.blankj.utilcode.util.Utils;
+import com.squareup.leakcanary.LeakCanary;
+import com.squareup.leakcanary.RefWatcher;
 import com.veer.rx.BuildConfig;
 
 /**
@@ -16,6 +18,8 @@ import com.veer.rx.BuildConfig;
 
 public class MyApplication extends Application {
     private static MyApplication mMyApplication;
+    private static RefWatcher refWatcher;
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -37,6 +41,20 @@ public class MyApplication extends Application {
         }
         // 尽可能早，推荐在Application中初始化
         ARouter.init(this);
+//        initLeakCanary();
+    }
+
+    /**
+     * 初始化内存分析工具 LeakCanary
+     */
+    private void initLeakCanary(){
+        if (LeakCanary.isInAnalyzerProcess(this)) {
+            // This process is dedicated to LeakCanary for heap analysis.
+            // You should not init your app in this process.
+            return;
+        }
+        refWatcher = LeakCanary.install(this);
+        // Normal app init code...
     }
     public static MyApplication getApplication() {
         return mMyApplication;
