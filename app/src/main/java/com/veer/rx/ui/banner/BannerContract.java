@@ -14,11 +14,11 @@ import java.util.List;
  */
 
 public interface BannerContract {
-    interface View extends BaseContract.BaseView{
+    interface View extends BaseContract.IView {
         void setBanner(List<OtherProductModel> list);
 
     }
-    interface Presenter extends BaseContract.BasePresenter<View>{
+    interface Presenter extends BaseContract.IPresenter<View> {
         void getBanner(String id);
     }
 }

@@ -11,12 +11,12 @@ import com.veer.rx.widget.FrameLayout4Loading;
  */
 
 public interface MainContract {
-    interface View extends BaseContract.BaseView{
+    interface View extends BaseContract.IView {
         void loginSuccess(String msg);
         void loginError(String msg);
 
     }
-    interface Presenter extends BaseContract.BasePresenter<View>{
+    interface Presenter extends BaseContract.IPresenter<View> {
         void login(FrameLayout4Loading frameLayout4Loading, String name, String password);
     }
 }

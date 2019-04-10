@@ -38,7 +38,7 @@ public class MainActivity extends BaseActivity<MainContract.Presenter> implement
 
     @Override
     protected MainContract.Presenter initPresenter() {
-        return new MainPresenter();
+        return new MainPresenter(this);
     }
 
     @Override

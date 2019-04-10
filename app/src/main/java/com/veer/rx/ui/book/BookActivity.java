@@ -45,11 +45,12 @@ public class BookActivity extends BaseActivity<BookPresenter> implements BookCon
 
     @Override
     protected  BookPresenter initPresenter() {
-        return new BookPresenter();
+        return new BookPresenter(this);
     }
 
     @Override
     protected int getActivityLayoutID() {
         return R.layout.activity_book;
     }
+
 }

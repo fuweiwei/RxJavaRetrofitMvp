@@ -19,6 +19,10 @@ import com.veer.rx.widget.FrameLayout4Loading;
 
 public class MainPresenter extends BasePresenter<MainContract.View> implements MainContract.Presenter{
 
+    public MainPresenter(MainContract.View view) {
+        super(view);
+    }
+
     @Override
     public void login(FrameLayout4Loading frameLayout4Loading, final String name, final String password) {
         mView.showLoading();

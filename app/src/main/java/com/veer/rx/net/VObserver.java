@@ -2,28 +2,28 @@ package com.veer.rx.net;
 
 import android.accounts.NetworkErrorException;
 import android.content.Context;
-import androidx.annotation.CallSuper;
 import android.text.TextUtils;
 
+import com.veer.rx.base.MyApplication;
 import com.veer.rx.model.base.BaseResponse;
 
-import java.lang.ref.WeakReference;
 import java.net.ConnectException;
 import java.util.concurrent.TimeoutException;
 
+import androidx.annotation.CallSuper;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 
 /**
- * Desc:
+ * Desc: 统一封装的Observer
  * Created by fww on 2019/3/29
  */
 public abstract class VObserver<T> implements Observer<BaseResponse<T>> {
     private static final String TAG = "ATObserver";
-    protected WeakReference<Context> mContext;
+    protected Context mContext;
 
-    public VObserver(Context context) {
-        this.mContext = new WeakReference(context);
+    protected VObserver() {
+        mContext = MyApplication.getApplication();
     }
 
     @Override
@@ -35,7 +35,7 @@ public abstract class VObserver<T> implements Observer<BaseResponse<T>> {
     @Override
     public void onNext(BaseResponse<T> tBaseResponse) {
         //根据业务来分
-        if(tBaseResponse.getStatus()==StatusCode.SUCCESS){
+        if(tBaseResponse.isSuccess()){
             onSuccess(tBaseResponse.getData());
         }else{
             onFailure(tBaseResponse.getStatus(),tBaseResponse.getMsg(),true);

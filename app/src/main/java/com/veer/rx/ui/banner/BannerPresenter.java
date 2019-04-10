@@ -2,14 +2,10 @@ package com.veer.rx.ui.banner;
 
 
 import com.veer.rx.base.BasePresenter;
-import com.veer.rx.base.BaseResult;
-import com.veer.rx.model.OtherProductModel;
+import com.veer.rx.model.BookModel;
 import com.veer.rx.net.RetrofitHelper;
 import com.veer.rx.net.RxSchedulers;
-
-import java.util.List;
-
-import io.reactivex.functions.Consumer;
+import com.veer.rx.net.VObserver;
 
 /**
  * 描述
@@ -21,22 +17,22 @@ import io.reactivex.functions.Consumer;
 
 public class BannerPresenter extends BasePresenter<BannerContract.View> implements BannerContract.Presenter{
 
+    public BannerPresenter(BannerContract.View view) {
+        super(view);
+    }
+
     @Override
     public void getBanner(String id) {
         RetrofitHelper.getInstance().getServer()
                 .getBannerInfo(id)
-                .compose(RxSchedulers.<BaseResult<List<OtherProductModel>>>applySchedulers())
-                .compose(mView.<BaseResult<List<OtherProductModel>>>bindToLife())
-                .subscribe(new Consumer<BaseResult<List<OtherProductModel>>>() {
+                .compose(RxSchedulers.applySchedulers())
+                .as(bindToLife())
+                .subscribe(new VObserver<String>() {
                     @Override
-                    public void accept(BaseResult<List<OtherProductModel>> listBaseResult) throws Exception {
-                        mView.setBanner(listBaseResult.getData());
-                    }
-                }, new Consumer<Throwable>() {
-                    @Override
-                    public void accept(Throwable throwable) throws Exception {
-                        mView.showFailed("网络错误，请稍后重试！");
+                    protected void onSuccess(String s) {
+
                     }
                 });
     }
+
 }

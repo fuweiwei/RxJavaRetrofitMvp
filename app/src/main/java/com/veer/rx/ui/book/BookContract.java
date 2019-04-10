@@ -12,11 +12,11 @@ import com.veer.rx.widget.FrameLayout4Loading;
  */
 
 public interface BookContract {
-    interface View extends BaseContract.BaseView{
+    interface View extends BaseContract.IView {
         void setBook(BookModel model);
 
     }
-    interface Presenter extends BaseContract.BasePresenter<View>{
+    interface Presenter extends BaseContract.IPresenter<View> {
         void getBook(FrameLayout4Loading frameLayout4Loading,String p, String tag, String start, String end);
     }
 }

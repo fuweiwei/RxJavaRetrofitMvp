@@ -1,6 +1,11 @@
 package com.veer.rx.base;
 
-import com.trello.rxlifecycle2.LifecycleTransformer;
+import org.greenrobot.greendao.annotation.NotNull;
+
+import androidx.lifecycle.Lifecycle;
+import androidx.lifecycle.LifecycleObserver;
+import androidx.lifecycle.LifecycleOwner;
+import androidx.lifecycle.OnLifecycleEvent;
 
 /**
  * 基础配置约定
@@ -11,20 +16,22 @@ import com.trello.rxlifecycle2.LifecycleTransformer;
 
 public interface BaseContract {
 
-    interface BasePresenter<T extends BaseView>{
-        /**
-         * view挂载
-         *
-         * @param view
-         */
-        void attachView(T view);
-        /**
-         * View卸载
-         */
-        void detachView();
+    interface IPresenter<T extends IView> extends LifecycleObserver {
+
+        void setLifecycleOwner(LifecycleOwner lifecycleOwner);
+
+        @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
+        void onCreate(@NotNull LifecycleOwner owner);
+
+        @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
+        void onDestroy(@NotNull LifecycleOwner owner);
+
+        @OnLifecycleEvent(Lifecycle.Event.ON_ANY)
+        void onLifecycleChanged(@NotNull LifecycleOwner owner,
+                                @NotNull Lifecycle.Event event);
     }
 
-    interface BaseView{
+    interface IView {
 
         /**
          * 显示进度中
@@ -60,12 +67,8 @@ public interface BaseContract {
          */
         void onRetry();
 
-        /**
-         * 绑定生命周期
-         *
-         * @param <T>
-         * @return
-         */
-        <T> LifecycleTransformer<T> bindToLife();
+    }
+    interface IModel{
+
     }
 }

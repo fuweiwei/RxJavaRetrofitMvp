@@ -3,14 +3,13 @@ package com.veer.rx.base;
 import android.app.Activity;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import androidx.annotation.Nullable;
 import android.view.Window;
 
 import com.blankj.utilcode.util.ToastUtils;
-import com.trello.rxlifecycle2.LifecycleTransformer;
-import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 import com.veer.rx.widget.ProgressDialog;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
@@ -22,7 +21,7 @@ import butterknife.Unbinder;
  * @date 18/7/2
  */
 
-public abstract class BaseActivity<P extends BaseContract.BasePresenter> extends RxAppCompatActivity implements BaseContract.BaseView {
+public abstract class BaseActivity<P extends BaseContract.IPresenter> extends AppCompatActivity implements BaseContract.IView {
     protected Activity mContext;
     protected P mPresenter;
     private Unbinder mUnBinder;
@@ -35,11 +34,12 @@ public abstract class BaseActivity<P extends BaseContract.BasePresenter> extends
         setContentView(getActivityLayoutID());
         //强制竖屏
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        mContext = this;
         //初始化butterknife
         mUnBinder = ButterKnife.bind(this);
         mPresenter = initPresenter();
-        mContext = this;
-        attachView();
+        mPresenter.setLifecycleOwner(this);
+        getLifecycle().addObserver(mPresenter);
         initView();
     }
 
@@ -58,23 +58,6 @@ public abstract class BaseActivity<P extends BaseContract.BasePresenter> extends
         super.onDestroy();
         if (mUnBinder != Unbinder.EMPTY) {
             mUnBinder.unbind();
-        }
-    }
-    /**
-     * 挂载view
-     */
-    private void attachView() {
-        if (mPresenter != null) {
-            mPresenter.attachView(this);
-        }
-    }
-
-    /**
-     * 卸载view
-     */
-    private void detachView() {
-        if (mPresenter != null) {
-            mPresenter.detachView();
         }
     }
     /**
@@ -125,10 +108,5 @@ public abstract class BaseActivity<P extends BaseContract.BasePresenter> extends
     @Override
     public void onRetry() {
 
-    }
-
-    @Override
-    public <T> LifecycleTransformer<T> bindToLife() {
-        return this.bindToLifecycle();
     }
 }

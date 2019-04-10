@@ -1,8 +1,6 @@
 package com.veer.rx.ui.banner;
 
 
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +16,8 @@ import com.veer.rx.util.ImageLoader;
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 
 /**
@@ -44,7 +44,7 @@ public class BannerActivity extends BaseActivity<BannerPresenter> implements Ban
     }
     @Override
     protected BannerPresenter initPresenter() {
-        return new BannerPresenter();
+        return new BannerPresenter(this);
     }
 
     @Override

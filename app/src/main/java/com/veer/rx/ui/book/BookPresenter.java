@@ -18,14 +18,18 @@ import io.reactivex.functions.Consumer;
 
 public class BookPresenter extends BasePresenter<BookContract.View> implements BookContract.Presenter{
 
+    public BookPresenter(BookContract.View view) {
+        super(view);
+    }
+
     @Override
     public void getBook(final FrameLayout4Loading frameLayout4Loading, String p, String tag, String start, String end) {
 //       mView.showLoading();
         frameLayout4Loading.showLoadingView();
         RetrofitHelper.getInstance().getServer()
                 .getBooks(p,tag,start,end)
-                .compose(RxSchedulers.<BookModel>applySchedulers())
-                .compose(mView.<BookModel>bindToLife())
+                .compose(RxSchedulers.applySchedulers())
+                .as(bindToLife())
                 .subscribe(new Consumer<BookModel>() {
                     @Override
                     public void accept(BookModel bookModel) throws Exception {

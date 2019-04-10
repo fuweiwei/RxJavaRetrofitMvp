@@ -3,16 +3,15 @@ package com.veer.rx.base;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.blankj.utilcode.util.ToastUtils;
-import com.trello.rxlifecycle2.LifecycleTransformer;
-import com.trello.rxlifecycle2.components.support.RxFragment;
 
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
@@ -22,7 +21,7 @@ import butterknife.Unbinder;
  * @email  276412667@qq.com
  * @date   18/7/3
  */
-public abstract class BaseFragment<P extends BaseContract.BasePresenter> extends RxFragment implements BaseContract.BaseView {
+public abstract class BaseFragment<P extends BaseContract.IPresenter> extends Fragment implements BaseContract.IView {
     private static final String STATE_SAVE_IS_HIDDEN = "STATE_SAVE_IS_HIDDEN";
     protected View mView;
     protected Activity mActivity;
@@ -36,7 +35,8 @@ public abstract class BaseFragment<P extends BaseContract.BasePresenter> extends
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mPresenter = initPresenter();
-        attachView();
+        mPresenter.setLifecycleOwner(this);
+        getLifecycle().addObserver(mPresenter);
         if (savedInstanceState != null) {
             boolean isSupportHidden = savedInstanceState.getBoolean(STATE_SAVE_IS_HIDDEN);
             FragmentTransaction ft = getFragmentManager().beginTransaction();
@@ -78,7 +78,6 @@ public abstract class BaseFragment<P extends BaseContract.BasePresenter> extends
         if (mUnBinder != null) {
             mUnBinder.unbind();
         }
-        detachView();
     }
 
     /**
@@ -142,23 +141,5 @@ public abstract class BaseFragment<P extends BaseContract.BasePresenter> extends
         ToastUtils.showShort("onRetry");
     }
 
-    @Override
-    public <T> LifecycleTransformer<T> bindToLife() {
-        return this.bindToLifecycle();
-    }
-
-
-    private void attachView() {
-        if (mPresenter != null) {
-            mPresenter.attachView(this);
-        }
-    }
-
-
-    private void detachView() {
-        if (mPresenter != null) {
-            mPresenter.detachView();
-        }
-    }
 
 }

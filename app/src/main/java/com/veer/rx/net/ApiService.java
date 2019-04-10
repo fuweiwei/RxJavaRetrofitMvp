@@ -1,11 +1,8 @@
 package com.veer.rx.net;
 
 
-import com.veer.rx.base.BaseResult;
 import com.veer.rx.model.BookModel;
-import com.veer.rx.model.OtherProductModel;
-
-import java.util.List;
+import com.veer.rx.model.base.BaseResponse;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;
@@ -26,7 +23,7 @@ public interface ApiService {
      * @return
      */
     @GET("/ace-app/bannerInfo/{id}")
-    Observable<BaseResult<List<OtherProductModel>>> getBannerInfo(@Path("id") String id);
+    Observable<BaseResponse<String>> getBannerInfo(@Path("id") String id);
     /**
      * 搜索图书
      * @param q

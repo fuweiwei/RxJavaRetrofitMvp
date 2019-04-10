@@ -51,10 +51,10 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
     //RxJava
     implementation 'io.reactivex.rxjava2:rxjava:2.1.12'
-    //Rxlife用于管理RxJava的订阅和解除
-    implementation 'com.trello.rxlifecycle2:rxlifecycle:2.2.1'
-    implementation 'com.trello.rxlifecycle2:rxlifecycle-components:2.2.1'
-    //RxAndroid
+    //autodispose代替Rxlife 用于RxJava的订阅和解除
+    implementation 'com.uber.autodispose:autodispose-android:1.2.0'
+    implementation 'com.uber.autodispose:autodispose-android-archcomponents:1.2.0'
+     //RxAndroid
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
     //ButterKnife
     implementation 'com.jakewharton:butterknife:10.0.0'
