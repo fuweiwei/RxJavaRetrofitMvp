@@ -4,6 +4,7 @@ import android.content.Context;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 
 /**
  * 图片加载类
@@ -30,17 +31,21 @@ public class ImageLoader {
      * @param view
      */
     public void displayImage(Context context, String url, ImageView view) {
+        RequestOptions requestOptions = new RequestOptions();
+        requestOptions.centerCrop();
         Glide.with(context)
                 .load(url)
-                .centerCrop()
+                .apply(requestOptions)
                 .into(view);
     }
     public void displayImage(Context context, String url, ImageView view,int defaultViewId,int errorViewId) {
+        RequestOptions requestOptions = new RequestOptions();
+        requestOptions.centerCrop()
+                .placeholder(defaultViewId)
+                .error(errorViewId);
         Glide.with(context)
                 .load(url)
-                .placeholder(defaultViewId)
-                .error(errorViewId)
-                .centerCrop()
+                .apply(requestOptions)
                 .into(view);
     }
 
