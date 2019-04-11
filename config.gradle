@@ -1,0 +1,56 @@
+
+ext {
+    android = [
+            compileSdkVersion: 28,
+            buildToolsVersion: "28.0.3",
+            applicationId    : "com.veer.rx",
+            minSdkVersion    : 16,
+            targetSdkVersion : 28,
+            versionCode      : 1,
+            versionName      : "1.0"
+    ]
+
+   dependencies = [
+           junit                            :"junit:junit:4.12",
+           espresso                         :"androidx.test.espresso:espresso-core:3.2.0-alpha03",
+           annotation                       :"androidx.annotation:annotation:1.0.2",
+           appcompat                        :"androidx.appcompat:appcompat:1.1.0-alpha04",
+           recyclerview                     :"androidx.recyclerview:recyclerview:1.1.0-alpha04",
+           constraintlayout                 :"androidx.constraintlayout:constraintlayout:2.0.0-alpha4",
+           //Retrofit
+           retrofit2                        :"com.squareup.retrofit2:retrofit:2.4.0",
+           retrofit2_adapter                :"com.squareup.retrofit2:adapter-rxjava2:2.4.0",
+           retrofit2_converter              :"com.squareup.retrofit2:converter-gson:2.4.0",
+           //RxJava
+           rxjava                           : "io.reactivex.rxjava2:rxjava:2.2.3",
+           //autodispose代替Rxlife 用于RxJava的订阅和解除
+           autodispose                      :"com.uber.autodispose:autodispose-android:1.2.0",
+           autodispose_archcomponents       :"com.uber.autodispose:autodispose-android-archcomponents:1.2.0",
+           //RxAndroid
+           rxandroid                        :"io.reactivex.rxjava2:rxandroid:2.1.0",
+           //ButterKnife
+           butterknife                      :"com.jakewharton:butterknife:10.0.0",
+           butterknife_compiler             :"com.jakewharton:butterknife-compiler:10.0.0",
+           //utilcode
+           utilcode                         :"com.blankj:utilcode:1.13.4",
+           //阿里的Arouter
+           arouter                          :"com.alibaba:arouter-api:1.4.0",
+           arouter_compiler                 :"com.alibaba:arouter-compiler:1.1.4",
+           //图片glide
+           glide                            :"com.github.bumptech.glide:glide:4.8.0",
+           //动画lottie
+           lottie                           :"com.airbnb.android:lottie:2.1.0",
+           // GreenGao
+           greendao                         :"org.greenrobot:greendao:3.2.2",
+           // 今日头条适配方案
+           autosize                         :"me.jessyan:autosize:1.1.2",
+           //square内存泄漏分析工具leakcanary
+           leakcanary                       :"com.squareup.leakcanary:leakcanary-android:1.6.3",
+           leakcanary_android               :"com.squareup.leakcanary:leakcanary-android-no-op:1.6.3",
+           // Optional, if you use support library fragments:
+           leakcanary_support_fragment      :"com.squareup.leakcanary:leakcanary-support-fragment:1.6.3"
+   ]
+}
+
+
+
