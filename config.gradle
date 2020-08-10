@@ -39,7 +39,7 @@ ext {
            //图片glide
            glide                            :"com.github.bumptech.glide:glide:4.8.0",
            //动画lottie
-           lottie                           :"com.airbnb.android:lottie:2.1.0",
+           lottie                           :"com.airbnb.android:lottie:3.4.0",
            // GreenGao
            greendao                         :"org.greenrobot:greendao:3.2.2",
            // 今日头条适配方案

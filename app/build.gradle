@@ -104,6 +104,7 @@ dependencies {
     implementation rootProject.ext.dependencies["greendao"]
     // 今日头条适配方案
     implementation rootProject.ext.dependencies["autosize"]
+    implementation 'com.google.android.material:material:1.1.0-alpha04'
     //square内存泄漏分析工具leakcanary
     debugImplementation rootProject.ext.dependencies["leakcanary"]
     releaseImplementation rootProject.ext.dependencies["leakcanary_android"]

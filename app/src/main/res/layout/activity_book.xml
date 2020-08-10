@@ -19,4 +19,13 @@
         </ScrollView>
 
     </com.veer.rx.widget.FrameLayout4Loading>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/switch_assistant"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:backgroundTint="#00b4a0"
+        android:src="@mipmap/icon_switch_white"
+        app:borderWidth="0dp"
+        android:visibility="visible"
+        />
 </RelativeLayout>
